@@ -1,5 +1,6 @@
 import 'package:fish_redux/fish_redux.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyrefresh/easy_refresh.dart';
 
 import 'BusinessPage/page.dart';
 import 'action.dart';
@@ -10,15 +11,33 @@ Widget buildView(DemoState state, Dispatch dispatch, ViewService viewService) {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
 
   List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: 我是主页',
-      style: optionStyle,
+//    EasyRefresh(
+//      child: new SingleChildScrollView(
+//        child: Text(
+//          'Index 0: 我是主页',
+//          style: optionStyle,
+//        ),
+//      ),
+//      onRefresh: () async {},
+//      onLoad: () async {},
+//    ),
+    SingleChildScrollView(
+      child: Text(
+        'Index 0: 我是主页',
+        style: optionStyle,
+      ),
     ),
     // 这是第二个界面哦
     BusinessPage().buildPage(null),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
+    EasyRefresh(
+      child: new SingleChildScrollView(
+        child: Text(
+          'Index 2: School',
+          style: optionStyle,
+        ),
+      ),
+      onRefresh: () async {},
+      onLoad: () async {},
     ),
   ];
 
@@ -32,7 +51,8 @@ Widget buildView(DemoState state, Dispatch dispatch, ViewService viewService) {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: ImageIcon(AssetImage("assets/images/test.svg")),
+//            icon: Icon(Icons.home),
             title: Text('Home'),
           ),
           BottomNavigationBarItem(

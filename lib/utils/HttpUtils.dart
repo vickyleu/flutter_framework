@@ -79,7 +79,7 @@ class HttpUtils {
             "api": "1.0.0"
           },
 
-          contentType: ContentType.JSON,
+          contentType: ContentType.json,
           // Transform the response data to a String encoded with UTF8.
           // The default value is [ResponseType.JSON].
           responseType: ResponseType.plain
