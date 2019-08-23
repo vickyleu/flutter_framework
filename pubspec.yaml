@@ -26,6 +26,8 @@ dependencies:
 
   flutter_easyrefresh: any
 
+  flutter_svg: any
+
   fish_redux: any
 
   flutter:
