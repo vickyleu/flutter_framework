@@ -55,6 +55,7 @@ Widget buildView(DemoState state, Dispatch dispatch, ViewService viewService) {
                 decoration: BoxDecoration(color: Colors.transparent),
                 child: SafeArea(
                     child: AppBar(
+                      centerTitle: true,
                       elevation: 0,
                        backgroundColor: Colors.transparent,
                      title: Text("😑"),

@@ -50,5 +50,6 @@ dev_dependencies:
 flutter:
   assets:
     - assets/images/test.svg
+    - assets/images/wxbg.png
 
   uses-material-design: true
