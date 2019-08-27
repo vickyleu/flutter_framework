@@ -48,22 +48,7 @@ Widget buildView(DemoState state, Dispatch dispatch, ViewService viewService) {
           child: Stack(
            children: [
            _widgetOptions.elementAt(state.selectedIndex),
-           PreferredSize(
-              child: Container(
-                width: double.infinity,
-                height: double.infinity,
-                decoration: BoxDecoration(color: Colors.transparent),
-                child: SafeArea(
-                    child: AppBar(
-                      centerTitle: true,
-                      elevation: 0,
-                       backgroundColor: Colors.transparent,
-                     title: Text("😑"),
-                     leading: IconButton(
-                      icon: Icon(Icons.backspace), onPressed: () => {}),
-                )),
-              ),
-              preferredSize: Size(double.infinity, 50)),
+
         ],
       )),
       bottomNavigationBar: BottomNavigationBar(

@@ -20,34 +20,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
-    final scroll = CustomScrollView(
-      controller: ScrollController(initialScrollOffset: 0),
-      physics: BouncingScrollPhysics(),
-      shrinkWrap: true,
-      slivers: <Widget>[
-        SliverAppBar(
-          floating: true,
-          pinned: false,
-          snap: true,
-          flexibleSpace: FlexibleSpaceBar(
-            background: Image.asset("assets/images/wxbg.png"),
-          ),
-          expandedHeight: 156,
-        ),
-        SliverList(
-            delegate: SliverChildBuilderDelegate(
-                  (context, index) => ListTile(
-                title: Text(
-                  "你们啊,naive",
-                  style: TextStyle(fontSize: 20.0),
-                ),
-              ),
-              childCount: 20,
-            ))
-      ],
-    );
-
     return CupertinoApp(
       localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
         DefaultMaterialLocalizations.delegate,
