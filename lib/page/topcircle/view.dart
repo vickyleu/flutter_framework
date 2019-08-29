@@ -8,6 +8,9 @@ import 'state.dart';
 
 Widget buildView(
     TopCircleState state, Dispatch dispatch, ViewService viewService) {
+
+  var selectExpandIndex=-1;
+
   return Scaffold(
       body: Stack(
     children: <Widget>[
@@ -23,18 +26,31 @@ Widget buildView(
             ),
             expandedHeight: 156,
           ),
-          SliverFixedExtentList(
+          SliverList(
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
                 return Container(
                   alignment: Alignment.center,
-                  color: Colors.lightBlue[100 * (index % 9)],
-                  child: Text('你们啊,naive $index'),
+//                  color: Colors.lightBlue[100 * (index % 9)],
+                  child: ExpansionTile(
+                    title: Text('你们啊,naive $index'),
+                    initiallyExpanded: false,//默认是否展开
+                    onExpansionChanged: (expand){
+                      if(expand){
+                        selectExpandIndex=index;
+                      }
+                    },
+                    children: ["试试看啊", "试看", "看"]
+                        .map((val) => new ListTile(
+                              title: new Text(val),
+                            ))
+                        .toList(),
+
+                  ),
                 );
               },
               childCount: 20,
             ),
-            itemExtent: 50,
           )
         ],
       ),
