@@ -32,22 +32,48 @@ class TopState extends State<TopPage> with SingleTickerProviderStateMixin {
               elevation: 0,
               floating: false,
               pinned: true,
-              backgroundColor: const Color(0XFF5CCCE5),
+              backgroundColor: const Color(0XFFF76F6F),
               flexibleSpace: FlexibleSpaceBar(
                 background: Container(
                   width: double.infinity,
                   height: double.infinity,
-                  color: Colors.yellow,
                   child: Stack(
+                    alignment: Alignment.bottomCenter,
                     children: <Widget>[
-                      Center(
-                        heightFactor: 0.5,
-                        widthFactor: 0.5,
+                      Padding(
+                        padding: EdgeInsets.only(bottom: 20),
                         child:
-                        Image.asset("assets/images/wxbg.png")
-//                        SvgPicture.asset('progress_bar8.svg')
-                        ,),
-                      Text('')
+//                        Image.asset("assets/images/wxbg.png")
+                            SvgPicture.asset("assets/images/progress_bar8.svg"),
+                      ),
+                      Padding(
+                        child: Column(
+                          mainAxisSize:MainAxisSize.min ,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              '已完成',
+                              style:
+                                  TextStyle(fontSize: 10, color: Colors.white),
+                              textAlign: TextAlign.center,
+                            ),
+                            Text(
+                              '12565',
+                              style:
+                                  TextStyle(fontSize: 28, color: Colors.white),
+                              textAlign: TextAlign.center,
+                            ),
+                            Text(
+                              '总题数：6498631',
+                              style:
+                              TextStyle(fontSize: 10, color: Colors.white),
+                              textAlign: TextAlign.center,
+                            ),
+
+                          ],
+                        ),
+                        padding: EdgeInsets.only(bottom: 35),
+                      ),
                     ],
                   ),
                 ),
@@ -105,10 +131,10 @@ class TopState extends State<TopPage> with SingleTickerProviderStateMixin {
                 height: 50,
                 width: double.infinity,
                 child: Center(
-                    child: Text("😑",
+                    child: Text("思想道德修养与法律",
                         style: TextStyle(
-                          fontSize: 20.0,
-                          color: Colors.yellow,
+                          fontSize: 18.0,
+                          color: Colors.white,
                         ))),
               )),
             ),
