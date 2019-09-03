@@ -2,6 +2,7 @@ import 'dart:collection';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:liang_flutter_demo/widget/AppExpansionTile.dart';
 
 class TopPage extends StatefulWidget {
@@ -12,12 +13,10 @@ class TopPage extends StatefulWidget {
 class TopState extends State<TopPage> with SingleTickerProviderStateMixin {
   var selectExpandIndex = -1;
 
-
   @override
   void initState() {
     super.initState();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -30,12 +29,32 @@ class TopState extends State<TopPage> with SingleTickerProviderStateMixin {
           physics: BouncingScrollPhysics(),
           slivers: <Widget>[
             SliverAppBar(
-              floating: true,
+              elevation: 0,
+              floating: false,
               pinned: true,
+              backgroundColor: const Color(0XFF5CCCE5),
               flexibleSpace: FlexibleSpaceBar(
-                background: Image.asset("assets/images/wxbg.png"),
+                background: Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  color: Colors.yellow,
+                  child: Stack(
+                    children: <Widget>[
+                      Center(
+                        heightFactor: 0.5,
+                        widthFactor: 0.5,
+                        child:
+                        Image.asset("assets/images/wxbg.png")
+//                        SvgPicture.asset('progress_bar8.svg')
+                        ,),
+                      Text('')
+                    ],
+                  ),
+                ),
+//                Image.asset("assets/images/wxbg.png"),
               ),
-              expandedHeight: 156,
+              expandedHeight:
+                  MediaQuery.of(context).size.width.toDouble() * 0.6,
             ),
             SliverList(
               delegate: SliverChildBuilderDelegate(

@@ -51,5 +51,6 @@ flutter:
   assets:
     - assets/images/test.svg
     - assets/images/wxbg.png
+    - assets/images/progress_bar8.svg
 
   uses-material-design: true
