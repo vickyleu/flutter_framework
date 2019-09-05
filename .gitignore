@@ -9,7 +9,7 @@
 .history
 .svn/
 
-
+ios/Runner.xcworkspace
 pubspec.lock
 
 # IntelliJ related
